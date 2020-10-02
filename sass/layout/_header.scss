@@ -1,0 +1,42 @@
+.header {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__banner {
+    align-self: flex-end;
+    flex: 70%;
+    transform: translateY(2rem);
+
+    img {
+      display: block;
+    }
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__canvas {
+    width: 80rem;
+    height: 120rem;
+    background: var(--secondary);
+    opacity: 0.15;
+    position: absolute;
+    top: -20rem;
+    left: -20rem;
+    transform: rotate(-30deg);
+    border-radius: 100rem;
+    z-index: -1;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+}

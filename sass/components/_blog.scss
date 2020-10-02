@@ -1,0 +1,36 @@
+.blog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__card {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    img {
+      height: 20rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.6;
+    color: var(--dark-blue);
+  }
+}

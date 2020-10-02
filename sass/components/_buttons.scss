@@ -1,0 +1,58 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .button {
+    &:not(:last-child) {
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 0.4rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  transition: all 0.3s ease;
+
+  i {
+    margin-right: 1rem;
+  }
+
+  &--fluid {
+    width: 100%;
+  }
+
+  &--primary {
+    color: var(--white);
+    background: var(--primary);
+  }
+
+  &--secondary {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: transparent;
+  }
+
+  &--icon {
+    color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    background: transparent;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
