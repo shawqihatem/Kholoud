@@ -705,19 +705,20 @@ body {
 }
 .posts .latest__card {
   display: flex;
+  flex-direction: column;
+}
+.posts .latest__card:not(:last-child) {
+  margin-bottom: 3rem;
 }
 .posts .latest__card img {
   width: 20rem;
   border-radius: 0.5rem;
-  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 .posts .latest__card h3 {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.posts .latest__card:not(:last-child) {
   margin-bottom: 1rem;
 }
 .posts .tags ul {
