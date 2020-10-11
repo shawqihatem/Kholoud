@@ -23,10 +23,6 @@
   padding: 1rem 3rem;
   transition: all 0.3s ease;
 
-  &:hover {
-    transform: translateY(-0.5rem);
-  }
-
   i {
     margin-right: 1rem;
   }
@@ -38,10 +34,6 @@
   &--primary {
     color: var(--white);
     background: var(--primary);
-
-    :hover {
-      background: #471f21;
-    }
   }
 
   &--secondary {
@@ -58,5 +50,9 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
   }
 }

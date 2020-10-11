@@ -15,6 +15,8 @@
       crossorigin="anonymous"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -24,6 +26,23 @@
         <span class="navigation__toggler__bar"></span>
         <span class="navigation__toggler__bar"></span>
         <span class="navigation__toggler__bar"></span>
+      </div>
+      <div class="navigation__menu">
+        <div class="navigation__close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+        <ul class="navigation__list">
+          <li class="navigation__item"><a href="" class="navigation__link">خدماتي </a></li>
+          <li class="navigation__item"><a href="" class="navigation__link">مقالاتي</a></li>
+          <li class="navigation__item"><a href="" class="navigation__link">أعمالي</a></li>
+          <li class="navigation__item"><a href="" class="navigation__link">أطلب خدماتي</a></li>
+          <li class="navigation__item"><a href="" class="navigation__link">تواصل معي</a></li>
+          <li class="navigation__item"><a href="" class="navigation__link">قصتي</a></li>
+        </ul>
       </div>
     </nav>
 
@@ -66,6 +85,7 @@
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
+            data-aos-offset="-200"
             data-aos-once="true"
             class="header__banner mr--big"
           >
@@ -94,7 +114,7 @@
     <section class="section">
       <div class="container">
         <div class="flex">
-          <h3 class="heading mb--large">خدماتنا</h3>
+          <h3 class="heading mb--large">خدماتي</h3>
           <div class="services">
             <div
               class="services__card"
@@ -181,7 +201,7 @@
       <div class="container">
         <div class="achievements">
           <div class="achievements__field flex">
-            <h3 class="achievements__value">130</h3>
+            <h3 class="achievements__value" id="achievements__value--1">130</h3>
             <p class="achievements__desc">مشروع</p>
           </div>
           <div class="achievements__field flex">
@@ -205,6 +225,7 @@
             <div
               class="blog__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="100"
             >
@@ -217,6 +238,7 @@
             <div
               class="blog__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="200"
             >
@@ -229,6 +251,7 @@
             <div
               class="blog__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="300"
             >
@@ -241,6 +264,7 @@
             <div
               class="blog__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="400"
             >
@@ -259,11 +283,12 @@
     <section class="section section--featured">
       <div class="container">
         <div class="flex">
-          <h3 class="heading mb--large">آخر أعمالنا</h3>
+          <h3 class="heading mb--large">آخر أعمالي</h3>
           <div class="portfolio">
             <div
               class="portfolio__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="100"
             >
@@ -275,6 +300,7 @@
             <div
               class="portfolio__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="200"
             >
@@ -286,6 +312,7 @@
             <div
               class="portfolio__card"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-duration="1000"
               data-aos-delay="300"
             >
@@ -303,9 +330,11 @@
     <section class="section">
       <div class="container">
         <div class="flex">
-          <h3 class="heading mb--large">قالوا عني</h3>
-          <div class="testimonial">
-            <div class="testimonial__card">
+          <h3 class="heading heading--center mb--large" \>قالوا عني</h3>
+        </div>
+        <div class="swiper-container">
+          <div class="testimonial swiper-wrapper">
+            <div class="testimonial__card swiper-slide">
               <img
                 src="https://images.unsplash.com/photo-1583330638480-50271adb037e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                 alt=""
@@ -313,7 +342,6 @@
               />
               <h3 class="testimonial__name">Shawqi Hatem</h3>
               <p class="testimonial__title">Web Developer</p>
-
               <p class="testimonial__desc">
                 هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
                 هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو
@@ -390,6 +418,29 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
+
+      const navigation = document.querySelector('.navigation__menu')
+      const navigationToggler = document.querySelector('.navigation__toggler')
+      const navigationClose = document.querySelector('.navigation__close')
+
+      navigationToggler.addEventListener('click', () => {
+        navigation.classList.add('navigation__menu--opened')
+      })
+
+      navigationClose.addEventListener('click', () => {
+        navigation.classList.remove('navigation__menu--opened')
+      })
+    </script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module">
+      import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+
+      const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        loop: true,
+      })
     </script>
   </body>
 </html>
