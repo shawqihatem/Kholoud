@@ -25,21 +25,21 @@
   &__menu {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
-    width: 100%;
+    width: 40rem;
     background: var(--primary);
     z-index: 9;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
 
     &--opened {
-      transform: translateY(0);
+      transform: translateX(0);
       visibility: visible;
       opacity: 1;
     }
@@ -47,20 +47,12 @@
 
   &__list {
     display: flex;
-
-    @media only screen and (max-width: 992px) {
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
 
   &__item {
     &:not(:last-child) {
-      margin-left: 4rem;
-
-      @media only screen and (max-width: 992px) {
-        margin-left: 0;
-        margin-bottom: 4rem;
-      }
+      margin-bottom: 4rem;
     }
   }
 
